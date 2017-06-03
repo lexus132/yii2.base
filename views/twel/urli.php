@@ -13,8 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
 		    <tr  style="text-align: center; font-weight: bolder;">
 			<td>#</td>
 			<td><?= $coments[0]->attributeLabels()['name']; ?></td>
-			<td><?= $coments[0]->attributeLabels()['type']; ?></td>
-			<td><?= $coments[0]->attributeLabels()['description']; ?></td>
+			<!--<td><?php //= $coments[0]->attributeLabels()['type']; ?></td>-->
+			<td><?= $coments[0]->attributeLabels()['text']; ?></td>
 		    </tr>
 		    <?php foreach($coments as $coment){ ?>
 			<tr>
@@ -24,8 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
 				    <?= (!empty($coment->name))? ucfirst($coment->name) : ''; ?>
 				</a>
 			    </td>
-			    <td><?= (!empty($coment->type))? $coment->type : ''; ?></td>
-			    <td><?= (!empty($coment->description))? $coment->description : ''; ?></td>
+			    <!--<td><?php //= (!empty($coment->type))? $coment->type : ''; ?></td>-->
+			    <td><?= (!empty($coment->text))? $coment->text : ''; ?></td>
 			</tr>
 		    <?php } ?>
 	    <?php } ?>

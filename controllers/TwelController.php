@@ -123,7 +123,7 @@ class TwelController extends Controller
     {
 	if(!empty(Yii::$app->request->get('id')))
 	{
-	    $comment = News::find()->where(['id' => (int)Yii::$app->request->get('id')])->one();
+	    $comment = Coments::find()->where(['id' => (int)Yii::$app->request->get('id')])->one();
 	    if(empty($comment)){
 //		return Yii::$app->getResponse()->redirect('/twel/url');
 		throw new \yii\web\NotFoundHttpException('Fuck ... ! Bad request!');
@@ -131,7 +131,7 @@ class TwelController extends Controller
 	    }
 	    return $this->render('urliitem',['coment' => $comment]);
 	} else {
-	    $comments = News::find();
+	    $comments = Coments::find();
 	    $page = new Pagination([
 		    'defaultPageSize' => 2,
 		    'totalCount' => $comments->count(),
