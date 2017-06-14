@@ -40,11 +40,30 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Twel', 'url' => ['/twel/index']],
-            ['label' => 'Home', 'url' => ['/site/index']],
+//            ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Video', 'url' => ['/site/video']],
             ['label' => 'Events', 'url' => ['/site/events']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
+	    [
+		'label' => 'Home',
+		'url' => ['site/index'],
+//		'linkOptions' => [...],
+	    ],
+	    [
+		'label' => 'Dropdown',
+		'items' => [
+		     ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
+		     '<li class="divider"></li>',
+		     '<li class="dropdown-header">Dropdown Header</li>',
+		     ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
+		],
+	    ],
+//	    [
+//		'label' => 'Login',
+//		'url' => ['site/login'],
+//		'visible' => Yii::$app->user->isGuest
+//	    ],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
@@ -61,7 +80,7 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
-
+    
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
